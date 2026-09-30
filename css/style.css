@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: #ffffff;
+}
+
+
+/*ШЛЯПА*/
+
+.header {
+    height: 90px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #111111;
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+    letter-spacing: 5px;
+
+    color: #999999;
+}
+
+.nav {
+    display: flex;
+    gap: 35px;
+}
+
+.nav a {
+    color: #cccccc;
+    text-decoration: none;
+
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+
+/*ГЛАВН.ЭКР*/
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            #050505 32%,
+            rgba(5, 5, 5, 0.95) 42%,
+            rgba(5, 5, 5, 0.5) 55%,
+            rgba(5, 5, 5, 0.05) 70%
+        ),
+        url("../images/barber.jpg");
+
+    background-size: auto 145%;
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    background-color: #050505;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-label,
+.section-label {
+    color: #a6a6a6;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 35px;
+}
+
+.hero-text {
+    max-width: 550px;
+
+    color: #c7c7c7;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    margin-bottom: 40px;
+}
+
+
+/*КНОПКИ*/
+
+.button {
+    display: inline-block;
+
+    padding: 18px 30px;
+
+    color: #111111;
+    background: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #cccccc;
+}
+
+
+/*"О НАС" */
+
+.about-preview {
+    padding: 130px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    background: #f0eee9;
+    color: #111111;
+}
+
+.section-number {
+    color: #aaaaaa;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.about-text {
+    max-width: 800px;
+}
+
+.about-text .section-label {
+    color: #777777;
+}
+
+.about-text h2 {
+    font-size: clamp(45px, 6vw, 85px);
+    line-height: 0.95;
+
+    margin-bottom: 40px;
+}
+
+.about-text > p:not(.section-label) {
+    max-width: 650px;
+
+    color: #555555;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.text-link {
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+}
+
+
+/*УСЛУГИ*/
+
+.services-preview {
+    padding: 130px 7%;
+
+    background: #151515;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 70px;
+}
+
+.section-heading h2 {
+    font-size: clamp(45px, 6vw, 80px);
+}
+
+.service-list {
+    border-top: 1px solid #444444;
+
+    margin-bottom: 60px;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid #444444;
+}
+
+.service span {
+    color: #777777;
+    font-size: 12px;
+}
+
+.service h3 {
+    font-size: 25px;
+}
+
+.service p {
+    max-width: 450px;
+
+    color: #999999;
+
+    line-height: 1.6;
+}
+
+.dark-button {
+    background: #ffffff;
+}
+
+
+
+.cta {
+    padding: 140px 7%;
+
+    text-align: center;
+
+    background: #e8e5df;
+    color: #111111;
+}
+
+.cta > p {
+    color: #777777;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+.cta h2 {
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: 0.95;
+
+    margin-bottom: 50px;
+}
+
+.cta .button {
+    background: #111111;
+    color: white;
+}
+
+.cta .button:hover {
+    background: #333333;
+}
+
+
+
+.footer {
+    padding: 60px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0b0b0b;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+.footer-logo {
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.footer-logo span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #777777;
+
+    font-size: 7px;
+    letter-spacing: 4px;
+}
+
+
+/* ---------- АДАПТИВНОСТЬ ---------- */
+
+@media (max-width: 800px) {
+
+    .header {
+        height: auto;
+
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .about-preview {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .service {
+        grid-template-columns: 50px 1fr;
+        gap: 15px;
+    }
+
+    .service p {
+        grid-column: 2;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+}
+
+
+/* ========================================
+   СТРАНИЦА УСЛУГ
+   ======================================== */
+
+
+/* ---------- ЗАГОЛОВОК ---------- */
+
+.page-hero {
+    min-height: 500px;
+
+    padding: 110px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #080808;
+}
+
+.page-hero h1 {
+    font-size: clamp(70px, 9vw, 140px);
+    line-height: 0.8;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 45px;
+}
+
+.page-description {
+    max-width: 550px;
+
+    color: #999999;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ---------- КАТАЛОГ ---------- */
+
+.services-catalog {
+    background: #e8e5df;
+    color: #111111;
+}
+
+.catalog-card {
+    min-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.catalog-image {
+    min-height: 600px;
+
+    overflow: hidden;
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.catalog-info {
+    padding: 80px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.catalog-number {
+    color: #999999;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    margin-bottom: 35px;
+}
+
+.catalog-info h2 {
+    font-size: clamp(45px, 5vw, 75px);
+    line-height: 0.95;
+
+    margin-bottom: 35px;
+}
+
+.catalog-info p {
+    max-width: 550px;
+
+    color: #555555;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 45px;
+}
+
+
+/* Время и стоимость */
+
+.catalog-details {
+    max-width: 550px;
+
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #aaaaaa;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* Чередование изображения и текста */
+
+.catalog-reverse .catalog-image {
+    order: 2;
+}
+
+.catalog-reverse .catalog-info {
+    order: 1;
+}
+
+
+/* ---------- НИЖНИЙ БЛОК ---------- */
+
+.services-bottom {
+    padding: 130px 7%;
+
+    text-align: center;
+
+    background: #111111;
+}
+
+.services-bottom h2 {
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: 0.95;
+
+    margin-bottom: 50px;
+}
+
+
+/* ---------- АДАПТИВНОСТЬ ---------- */
+
+@media (max-width: 800px) {
+
+    .page-hero {
+        min-height: 400px;
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .catalog-card {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-image {
+        min-height: 400px;
+    }
+
+    .catalog-info {
+        padding: 70px 7%;
+    }
+
+    .catalog-reverse .catalog-image,
+    .catalog-reverse .catalog-info {
+        order: initial;
+    }
+
+}
