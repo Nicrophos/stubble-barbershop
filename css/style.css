@@ -444,19 +444,21 @@ body {
 .catalog-card {
     min-height: 600px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    width: 100%;
 }
 
 .catalog-image {
     height: 600px;
     overflow: hidden;
+
 }
 
 .catalog-image img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     display: block;
+    width: 100%;
 
     object-fit: cover;
     object-position: center;
@@ -796,6 +798,413 @@ body {
 
     .price-table {
         min-width: 700px;
+    }
+
+}
+
+/* ========================================
+   СТРАНИЦА "О НАС"
+   ======================================== */
+
+
+/* ---------- О БАРБЕРШОПЕ ---------- */
+
+.about-page {
+    padding: 130px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    background: #e8e5df;
+    color: #111111;
+}
+
+.about-page-number {
+    color: #999999;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.about-page-content {
+    max-width: 850px;
+}
+
+.about-page-content .section-label {
+    color: #777777;
+}
+
+.about-page-content h2 {
+    margin-bottom: 50px;
+
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 0.95;
+}
+
+.about-page-content > p:not(.section-label) {
+    max-width: 700px;
+
+    margin-bottom: 25px;
+
+    color: #555555;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* ---------- ПРИНЦИПЫ ---------- */
+
+.about-values {
+    padding: 100px 7%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 60px;
+
+    background: #151515;
+}
+
+.about-value {
+    padding-top: 30px;
+
+    border-top: 1px solid #444444;
+}
+
+.about-value span {
+    color: #777777;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.about-value h3 {
+    margin: 30px 0 25px;
+
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+.about-value p {
+    max-width: 400px;
+
+    color: #999999;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ---------- МАСТЕРА ---------- */
+
+.masters {
+    padding: 120px 7%;
+
+    background: #e8e5df;
+    color: #111111;
+}
+
+.masters-heading {
+    margin-bottom: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.masters-heading .section-label {
+    color: #777777;
+}
+
+.masters-heading h2 {
+    font-size: clamp(45px, 6vw, 80px);
+}
+
+.masters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.master-image {
+    width: 100%;
+    height: 500px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    background: #cccccc;
+}
+
+.master-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.master-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.master-card p {
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* ---------- КОНТАКТЫ ---------- */
+
+.about-contact {
+    padding: 120px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    background: #111111;
+}
+
+.about-contact h2 {
+    font-size: clamp(45px, 6vw, 85px);
+    line-height: 0.95;
+}
+
+.about-contact-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.about-contact-info div {
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #444444;
+}
+
+.about-contact-info span {
+    color: #777777;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.about-contact-info p {
+    margin-top: 10px;
+
+    font-size: 16px;
+}
+
+
+/* ---------- АДАПТИВНОСТЬ ---------- */
+
+@media (max-width: 900px) {
+
+    .about-page {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .masters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .master-image {
+        height: 500px;
+    }
+
+    .about-contact {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+/* ========================================
+   СТРАНИЦА КОНТАКТОВ
+   ======================================== */
+
+
+/* ---------- КОНТАКТНАЯ ИНФОРМАЦИЯ ---------- */
+
+.contacts-section {
+    padding: 120px 7%;
+
+    background: #e8e5df;
+    color: #111111;
+}
+
+.contacts-heading {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    margin-bottom: 90px;
+}
+
+.contacts-heading .section-label {
+    color: #777777;
+}
+
+.contacts-heading h2 {
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 0.95;
+}
+
+
+/* Сетка контактов */
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #aaa7a1;
+    border-left: 1px solid #aaa7a1;
+}
+
+.contact-item {
+    min-height: 330px;
+
+    padding: 45px;
+
+    border-right: 1px solid #aaa7a1;
+    border-bottom: 1px solid #aaa7a1;
+}
+
+.contact-item > span {
+    color: #777777;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.contact-item h3 {
+    margin: 45px 0 30px;
+
+    font-size: clamp(28px, 3vw, 45px);
+    line-height: 1.05;
+}
+
+.contact-item p {
+    max-width: 350px;
+
+    color: #666666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ---------- КАРТА ---------- */
+
+.map-section {
+    padding: 120px 7%;
+
+    background: #151515;
+}
+
+.map-heading {
+    margin-bottom: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.map-heading h2 {
+    font-size: clamp(45px, 6vw, 80px);
+}
+
+.map-container {
+    width: 100%;
+    height: 550px;
+
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* ---------- НИЖНИЙ БЛОК ---------- */
+
+.contacts-bottom {
+    padding: 130px 7%;
+
+    background: #e8e5df;
+    color: #111111;
+
+    text-align: center;
+}
+
+.contacts-bottom .section-label {
+    color: #777777;
+}
+
+.contacts-bottom h2 {
+    margin-bottom: 50px;
+
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.9;
+}
+
+.contacts-bottom .button {
+    background: #111111;
+    color: #ffffff;
+}
+
+.contacts-bottom .button:hover {
+    background: #333333;
+}
+
+
+/* ---------- АДАПТИВНОСТЬ ---------- */
+
+@media (max-width: 900px) {
+
+    .contacts-heading {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+        min-height: auto;
+    }
+
+    .map-container {
+        height: 400px;
     }
 
 }
