@@ -1516,3 +1516,126 @@ body {
         padding: 40px 6%;
     }
 }
+/* Адаптация для больших экранов и телевизоров */
+
+@media (min-width: 2200px) {
+
+    /* Каталог услуг */
+    .catalog-card {
+        max-width: 2400px;
+        margin: 0 auto;
+    }
+
+    .catalog-image {
+        height: 750px;
+    }
+
+    .catalog-info {
+        padding: 80px;
+    }
+
+    .catalog-info h2 {
+        font-size: 85px;
+    }
+
+    .catalog-info p {
+        font-size: 23px;
+        line-height: 1.6;
+    }
+
+    .catalog-details {
+        font-size: 17px;
+    }
+
+    /* Верхний блок */
+    .page-hero {
+        min-height: 450px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .page-hero h1 {
+        font-size: 130px;
+    }
+
+    .page-description {
+        font-size: 22px;
+    }
+
+    /* Шапка */
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav a {
+        font-size: 18px;
+    }
+
+    /* Нижний блок */
+    .services-bottom h2 {
+        font-size: 110px;
+    }
+    /* Главная страница */
+
+.hero h1 {
+    font-size: 120px;
+}
+
+.hero-text {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.about-preview h2,
+.services-preview h2 {
+    font-size: 85px;
+}
+
+.about-preview p,
+.services-preview p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+/* Прайс на больших экранах */
+
+.price-heading h2 {
+    font-size: 100px;
+}
+
+.price-table th {
+    font-size: 20px;
+    padding: 30px;
+}
+
+.price-table td,
+.price-table td:first-child,
+.price-table td:last-child {
+    font-size: 24px;
+    padding: 35px 30px;
+}
+
+.price-note {
+    font-size: 18px;
+}
+
+.price-info-item h3 {
+    font-size: 32px;
+}
+
+.price-info-item p {
+    font-size: 23px;
+    line-height: 1.6;
+}
+
+.price-info-item span {
+    font-size: 17px;
+}
+
+/* Кнопки */
+
+.button {
+    font-size: 18px;
+    padding: 22px 35px;
+}
+}
