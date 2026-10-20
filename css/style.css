@@ -416,13 +416,10 @@ body {
 }
 
 .page-hero h1 {
-    font-size: clamp(70px, 9vw, 140px);
-    line-height: 1.2;
-
-    max-width: 300px;
-    letter-spacing: -5px;
-
-    margin-bottom: 45px;
+    font-size: clamp(42px, 8vw, 110px);
+    line-height: 1;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .page-description {
@@ -1211,88 +1208,311 @@ body {
 
 }
 
-/* ===== Единая адаптивная система STUBBLE ===== */
-html { overflow-x: clip; }
-body { min-width: 320px; overflow-wrap: break-word; }
-img { max-width: 100%; }
-button { font: inherit; }
-:focus-visible { outline: 2px solid #c9a982; outline-offset: 4px; }
-.header { width: 100%; min-height: 90px; height: auto; padding-block: 18px; gap: 24px; }
-.logo { flex-shrink: 0; }
-.nav { align-items: center; }
-.menu-toggle { display: none; }
-/* Ограничение контента на широкоформатных мониторах без пустых полей на обычных экранах */
-.header > *, .hero-content { position: relative; }
-.hero { min-height: min(760px, 82vh); background-size: auto 145%; }
-.hero-content { width: min(100%, 820px); }
-.catalog-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 560px; width: 100%; }
-.catalog-image { width: 100%; height: 560px; min-width: 0; overflow: hidden; }
-.catalog-image img { display: block; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; object-position: center; }
-.catalog-info { min-width: 0; padding: clamp(35px, 5vw, 85px); }
-.catalog-details { gap: 18px; flex-wrap: wrap; }
-.master-image img { width: 100%; height: 100%; object-fit: cover; }
-.page-hero h1, .hero h1, .contacts-heading h2, .about-contact h2 { overflow-wrap: anywhere; }
-/* При широком экране контент центрируется в ограниченной области */
-@media (min-width: 1920px) {
-  .header { padding-inline: max(7%, calc((100vw - 1700px)/2)); }
-  .hero { padding-inline: max(7%, calc((100vw - 1700px)/2)); background-size: auto 125%; }
-  .page-hero, .about-preview, .services-preview, .cta, .price-section, .price-info, .price-bottom,
-  .about-page, .about-values, .masters, .about-contact, .contacts-section, .map-section, .contacts-bottom,
-  .services-bottom { padding-left: max(7%, calc((100vw - 1700px)/2)); padding-right: max(7%, calc((100vw - 1700px)/2)); }
-  .catalog-card { max-width: 1700px; margin-inline: auto; }
-  .services-catalog { background: #e8e5df; }
-  .footer { padding-inline: max(7%, calc((100vw - 1700px)/2)); }
+
+/* АДАПТИВНОСТЬ САЙТА */
+
+/* Общие настройки */
+
+* {
+    box-sizing: border-box;
 }
-@media (max-width: 1100px) {
-  .nav { gap: 18px; }
-  .catalog-card { min-height: 460px; }
-  .catalog-image { height: 460px; }
-  .catalog-info { padding: 42px 6%; }
-  .masters-grid { gap: 18px; }
-  .master-image { height: 380px; }
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-width: 320px;
+}
+
+/* Каталог услуг */
+
+.catalog-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.catalog-image {
+    height: 550px;
+    overflow: hidden;
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-info {
+    padding: 60px;
+}
+
+/* Бургер-меню на компьютере скрыто */
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* ТЕЛЕФОНЫ И ПЛАНШЕТЫ */
+
+@media (max-width: 800px) {
+
+    /* Шапка */
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Кнопка меню */
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: transparent;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 100%;
+        height: 2px;
+        background: white;
+    }
+
+    /* Выпадающее меню */
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #151515;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .nav.is-open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 12px;
+    }
+
+    /* Главный экран */
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .page-hero h1 {
+        font-size: 45px;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    /* Услуги: вместо двух колонок одна */
+
+    .catalog-card {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-image {
+        height: 350px;
+    }
+
+    .catalog-info {
+        padding: 40px 20px;
+    }
+
+    .catalog-reverse .catalog-image,
+    .catalog-reverse .catalog-info {
+        order: 0;
+    }
+
+    /* Мастера */
+
+    .masters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Контакты */
+
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Информационные блоки */
+
+    .price-info,
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page,
+    .about-contact,
+    .contacts-heading {
+        grid-template-columns: 1fr;
+    }
+
+    /* Таблица цен */
+
+    .price-table-wrapper {
+        overflow-x: auto;
+    }
+}
+
+
+/* ШИРОКИЕ ЭКРАНЫ И ТЕЛЕВИЗОРЫ */
+
+@media (min-width: 2200px) {
+
+    .catalog-card {
+        max-width: 2200px;
+        margin: 0 auto;
+    }
+
+    .catalog-image {
+        height: 700px;
+    }
+
+    .catalog-info h2 {
+        font-size: 80px;
+    }
+
+    .catalog-info p {
+        font-size: 20px;
+    }
 }
 @media (max-width: 800px) {
-  .header { flex-direction: row; justify-content: space-between; align-items: center; padding: 16px 6%; min-height: 76px; gap: 12px; }
-  .logo { font-size: 23px; }
-  .logo span { font-size: 8px; }
-  .menu-toggle { display: flex; width: 44px; height: 44px; padding: 11px 8px; flex-direction: column; justify-content: space-around; align-items: stretch; border: 1px solid #555; background: transparent; color: white; cursor: pointer; z-index: 22; }
-  .menu-toggle span { display: block; height: 2px; width: 100%; background: currentColor; transition: transform .2s, opacity .2s; }
-  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(8px) rotate(45deg); }
-  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-8px) rotate(-45deg); }
-  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 20px 6% 28px; background: #151515; border-top: 1px solid #444; box-shadow: 0 18px 24px #0008; flex-direction: column; align-items: stretch; gap: 0; z-index: 20; }
-  .nav.is-open { display: flex; }
-  .nav a { padding: 16px 5px; border-bottom: 1px solid #333; font-size: 14px; }
-  .hero { min-height: 570px; padding: 80px 6%; background-size: auto 105%; background-position: 80% center; background-image: linear-gradient(90deg, #050505 0%, #050505ed 35%, #05050599 80%, #05050570 100%), url("../images/barber.jpg"); }
-  .hero h1 { font-size: clamp(42px, 10vw, 74px); letter-spacing: -2px; }
-  .hero-text { font-size: 15px; }
-  .catalog-card { display: flex; flex-direction: column; min-height: 0; }
-  .catalog-image, .catalog-reverse .catalog-image { order: 0; height: clamp(270px, 70vw, 460px); min-height: 0; }
-  .catalog-info, .catalog-reverse .catalog-info { order: 1; padding: 48px 7% 58px; }
-  .catalog-info h2 { font-size: clamp(35px, 8vw, 60px); }
-  .catalog-info p { font-size: 15px; }
-  .masters-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .master-image { height: 350px; }
-  .price-heading, .masters-heading, .map-heading { gap: 16px; }
-  .about-contact, .about-page { gap: 35px; }
+
+    /* Все основные разделы */
+    .hero,
+    .page-hero,
+    .about-preview,
+    .services-preview,
+    .cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    /* Главный экран */
+    .hero-content {
+        width: 100%;
+    }
+
+    /* Заголовки */
+    .hero h1,
+    .page-hero h1,
+    .about-preview h2,
+    .services-preview h2 {
+        font-size: 36px;
+        line-height: 1.1;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    /* Разделы располагаются вертикально */
+    .about-preview,
+    .services-preview {
+        display: block;
+    }
+
+    /* Карточки услуг */
+    .catalog-card {
+        display: block;
+    }
+
+    .catalog-image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .catalog-info {
+        padding: 40px 6%;
+    }
 }
-@media (max-width: 560px) {
-  .hero { min-height: 540px; background-size: auto 100%; }
-  .hero h1 { font-size: clamp(39px, 10vw, 55px); }
-  .page-hero { padding: 65px 6%; min-height: 340px; }
-  .page-hero h1 { font-size: clamp(45px, 11vw, 70px); }
-  .about-preview, .services-preview, .cta, .price-section, .price-info, .price-bottom,
-  .about-page, .about-values, .masters, .about-contact, .contacts-section, .map-section, .contacts-bottom,
-  .services-bottom { padding: 70px 6%; }
-  .masters-grid { grid-template-columns: 1fr; }
-  .master-image { height: 430px; }
-  .contacts-grid { grid-template-columns: 1fr; }
-  .contact-item { padding: 30px 22px; }
-  .contacts-heading h2, .about-contact h2 { font-size: clamp(38px, 10vw, 60px); }
-  .price-table { min-width: 600px; }
-  .footer { padding: 45px 6%; }
-  .map-container { height: 330px; }
+@media (min-width: 2200px) {
+
+    .about-preview,
+    .services-preview,
+    .price-section,
+    .about-page,
+    .contacts-section {
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+    .about-preview h2,
+    .services-preview h2 {
+        font-size: 80px;
+        line-height: 1;
+    }
+
+    .services-preview {
+        overflow: visible;
+    }
+
+    .services-preview h2 {
+        overflow-wrap: normal;
+        word-break: normal;
+    }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+@media (max-width: 800px) {
+
+    /* Все основные разделы */
+    .hero,
+    .page-hero,
+    .about-preview,
+    .services-preview,
+    .cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    /* Главный экран */
+    .hero-content {
+        width: 100%;
+    }
+
+    /* Заголовки */
+    .hero h1,
+    .page-hero h1,
+    .about-preview h2,
+    .services-preview h2 {
+        font-size: 36px;
+        line-height: 1.1;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    /* Разделы располагаются вертикально */
+    .about-preview,
+    .services-preview {
+        display: block;
+    }
+
+    /* Карточки услуг */
+    .catalog-card {
+        display: block;
+    }
+
+    .catalog-image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .catalog-info {
+        padding: 40px 6%;
+    }
 }
