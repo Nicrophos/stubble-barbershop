@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/avatars/*
+!data/avatars/.gitkeep
+*.log
+.DS_Store
+.env
+node_modules/
+data/

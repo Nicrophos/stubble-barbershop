@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — STUBBLE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+  <header class="header profile-header">
+    <a href="/index.html" class="logo">STUBBLE<span>BARBERSHOP</span></a>
+    <nav class="account-nav"><a href="/">НА ГЛАВНУЮ</a><button type="button" id="profile-logout">ВЫЙТИ</button></nav>
+  </header>
+  <main class="account-layout">
+    <div class="account-top"><p class="section-label">STUBBLE / ЛИЧНЫЙ КАБИНЕТ</p><h1>МОЙ ПРОФИЛЬ</h1><p>Здесь хранятся твои регистрационные данные.</p></div>
+    <p id="profile-message" class="account-feedback" role="status" aria-live="polite"></p>
+    <div class="account-grid">
+      <section class="account-card account-summary">
+        <img id="profile-avatar" class="account-avatar" src="/images/avatar-placeholder.svg" alt="Аватар пользователя">
+        <h2 id="profile-name">Загрузка...</h2>
+        <p><strong>Логин:</strong> <span id="profile-login">—</span> <small>(не меняется)</small></p>
+        <p><strong>Почта:</strong> <span id="profile-email">—</span></p>
+        <form id="profile-photo" class="account-form" enctype="multipart/form-data">
+          <label>Изменить аватар (JPG, PNG или WEBP, до 2 МБ)
+            <input type="file" name="avatar" accept="image/jpeg,image/png,image/webp" required>
+          </label>
+          <button class="account-button" type="submit">ОБНОВИТЬ ФОТО</button>
+        </form>
+        <button id="remove-avatar" class="account-text-button" type="button">Удалить аватар</button>
+      </section>
+      <div class="account-sections">
+        <section class="account-card">
+          <h2>ИЗМЕНИТЬ ДАННЫЕ</h2>
+          <form id="profile-edit" class="account-form">
+            <label>ФИО<input id="edit-name" name="fullName" required minlength="2" maxlength="120" autocomplete="name"></label>
+            <label>Электронная почта<input id="edit-email" type="email" name="email" required autocomplete="email"></label>
+            <button class="account-button" type="submit">СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+          </form>
+        </section>
+        <section class="account-card">
+          <h2>СМЕНИТЬ ПАРОЛЬ</h2>
+          <form id="profile-password" class="account-form">
+            <label>Текущий пароль<input type="password" name="currentPassword" required autocomplete="current-password"></label>
+            <label>Новый пароль<input type="password" name="newPassword" minlength="8" required autocomplete="new-password"></label>
+            <label>Повтори новый пароль<input type="password" name="confirmPassword" minlength="8" required autocomplete="new-password"></label>
+            <button class="account-button" type="submit">СМЕНИТЬ ПАРОЛЬ</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="/js/account.js" defer></script>
+</body>
+</html>
