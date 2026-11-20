@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Прайс — STUBBLE Barbershop</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/print.css" id="print-styles" media="print">
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            STUBBLE
+            <span>BARBERSHOP</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+
+        <nav class="nav" id="site-nav">
+            <a href="index.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="price.html">Прайс</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+    </header>
+
+    <button class="print-toggle" type="button" aria-pressed="false">Версия для печати</button>
+
+
+    <main>
+
+        <section class="page-hero">
+
+            <p class="section-label">STUBBLE BARBERSHOP</p>
+
+            <h1 class="page-title">НАШ ПРАЙС</h1>
+
+            <p class="page-description">
+                Актуальная стоимость услуг STUBBLE.
+                Выберите подходящую услугу и доверьте свой стиль
+                нашим мастерам.
+            </p>
+
+        </section>
+
+
+        <section class="price-section">
+
+            <div class="price-heading">
+
+                <div>
+                    <p class="section-label">СТРИЖКИ И УХОД</p>
+                    <h2>УСЛУГИ</h2>
+                </div>
+
+            </div>
+
+
+            <div class="smart-filter" id="smart-filter">
+                <div class="filter-header">
+                    <div>
+                        <h3>НАЙТИ СВОЮ УСЛУГУ</h3>
+                    </div>
+                    <button class="filter-reset" id="filter-reset" type="button">СБРОСИТЬ ФИЛЬТРЫ</button>
+                </div>
+
+                <div class="filter-grid">
+                    <fieldset class="filter-group" data-group="category">
+                        <legend>ТИП УСЛУГИ</legend>
+                        <label class="filter-option"><input type="checkbox" name="category" value="hair"> Стрижка</label>
+                        <label class="filter-option"><input type="checkbox" name="category" value="beard"> Борода и бритьё</label>
+                        <label class="filter-option"><input type="checkbox" name="category" value="combo"> Комплекс</label>
+                        <label class="filter-option"><input type="checkbox" name="category" value="care"> Уход</label>
+                    </fieldset>
+                    <fieldset class="filter-group" data-group="duration">
+                        <legend>ПРОДОЛЖИТЕЛЬНОСТЬ</legend>
+                        <label class="filter-option"><input type="checkbox" name="duration" value="short"> До 30 минут</label>
+                        <label class="filter-option"><input type="checkbox" name="duration" value="medium"> 31–60 минут</label>
+                        <label class="filter-option"><input type="checkbox" name="duration" value="long"> Более 60 минут</label>
+                    </fieldset>
+                    <fieldset class="filter-group" data-group="price">
+                        <legend>СТОИМОСТЬ</legend>
+                        <label class="filter-option"><input type="checkbox" name="price" value="low"> До 1 000 ₽</label>
+                        <label class="filter-option"><input type="checkbox" name="price" value="medium"> 1 001–1 600 ₽</label>
+                        <label class="filter-option"><input type="checkbox" name="price" value="high"> Более 1 600 ₽</label>
+                    </fieldset>
+                    <fieldset class="filter-group" data-group="area">
+                        <legend>ЗОНА УХОДА</legend>
+                        <label class="filter-option"><input type="checkbox" name="area" value="hair"> Волосы</label>
+                        <label class="filter-option"><input type="checkbox" name="area" value="beard"> Борода</label>
+                        <label class="filter-option"><input type="checkbox" name="area" value="face"> Лицо и кожа</label>
+                    </fieldset>
+                    <fieldset class="filter-group" data-group="feature">
+                        <legend>ЧТО ВХОДИТ В УСЛУГУ</legend>
+                        <label class="filter-option"><input type="checkbox" name="feature" value="wash"> Мытьё волос</label>
+                        <label class="filter-option"><input type="checkbox" name="feature" value="styling"> Укладка</label>
+                        <label class="filter-option"><input type="checkbox" name="feature" value="beard-shape"> Оформление бороды</label>
+                        <label class="filter-option"><input type="checkbox" name="feature" value="skin"> Уход за кожей</label>
+                    </fieldset>
+                </div>
+                <div class="filter-result" id="filter-result" role="status" aria-live="polite">Найдено услуг: 7</div>
+            </div>
+
+            <div class="price-table-wrapper">
+
+                <table class="price-table">
+
+                    <thead>
+                        <tr>
+                            <th>УСЛУГА</th>
+                            <th>ОПИСАНИЕ</th>
+                            <th>ВРЕМЯ</th>
+                            <th>ЦЕНА</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr data-category="hair" data-duration="medium" data-price="medium" data-area="hair" data-feature="wash styling">
+                            <td>Мужская стрижка</td>
+                            <td>Консультация, стрижка, мытьё и укладка</td>
+                            <td>60 мин.</td>
+                            <td>1 500 ₽</td>
+                        </tr>
+
+                        <tr data-category="hair" data-duration="short" data-price="low" data-area="hair" data-feature="">
+                            <td>Стрижка машинкой</td>
+                            <td>Стрижка одной или несколькими насадками</td>
+                            <td>30 мин.</td>
+                            <td>900 ₽</td>
+                        </tr>
+
+                        <tr data-category="beard" data-duration="medium" data-price="low" data-area="beard" data-feature="beard-shape styling">
+                            <td>Оформление бороды</td>
+                            <td>Коррекция формы, контур и укладка</td>
+                            <td>40 мин.</td>
+                            <td>1 000 ₽</td>
+                        </tr>
+
+                        <tr class="popular-service" data-category="combo" data-duration="long" data-price="high" data-area="hair beard" data-feature="beard-shape">
+                            <td>Стрижка + борода</td>
+                            <td>Комплексная стрижка и оформление бороды</td>
+                            <td>90 мин.</td>
+                            <td>2 200 ₽</td>
+                        </tr>
+
+                        <tr data-category="beard" data-duration="medium" data-price="medium" data-area="beard face" data-feature="skin">
+                            <td>Королевское бритьё</td>
+                            <td>Классическое бритьё с уходом за кожей</td>
+                            <td>45 мин.</td>
+                            <td>1 200 ₽</td>
+                        </tr>
+
+                        <tr data-category="hair" data-duration="medium" data-price="medium" data-area="hair" data-feature="">
+                            <td>Детская стрижка</td>
+                            <td>Стрижка для гостей до 12 лет</td>
+                            <td>45 мин.</td>
+                            <td>1 100 ₽</td>
+                        </tr>
+
+                        <tr data-category="care" data-duration="short" data-price="low" data-area="face" data-feature="skin">
+                            <td>Уход за лицом</td>
+                            <td>Очищение и базовый уход за кожей лица</td>
+                            <td>30 мин.</td>
+                            <td>800 ₽</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="price-note">
+                * Итоговая стоимость может зависеть от сложности работы.
+            </p>
+
+        </section>
+
+        <section class="price-info">
+
+            <div class="price-info-item">
+                <h3>КОНСУЛЬТАЦИЯ</h3>
+                <p>
+                    Перед началом работы мастер поможет подобрать
+                    стрижку и форму бороды.
+                </p>
+            </div>
+
+            <div class="price-info-item">
+                <h3>ПРОФЕССИОНАЛЬНЫЙ УХОД</h3>
+                <p>
+                    В работе используются профессиональные средства
+                    для волос, бороды и кожи.
+                </p>
+            </div>
+
+            <div class="price-info-item">
+                <h3>УКЛАДКА</h3>
+                <p>
+                    После стрижки мастер выполнит укладку
+                    и расскажет, как повторить её самостоятельно.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="price-bottom">
+
+            <p class="section-label"></p>
+
+            <h2>
+                ВРЕМЯ ОБНОВИТЬ<br>
+                СВОЙ СТИЛЬ
+            </h2>
+
+            <a href="contacts.html" class="button">
+                КОНТАКТЫ
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            STUBBLE
+            <span>BARBERSHOP</span>
+        </div>
+
+        <p>
+            Мужские стрижки и уход за бородой
+        </p>
+
+        <p>
+            © 2026 STUBBLE Barbershop
+        </p>
+
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/filter.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</body>
+</html>
