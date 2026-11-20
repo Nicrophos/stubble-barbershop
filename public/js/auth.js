@@ -38,7 +38,6 @@
         </form>
 
         <form id="form-forgot" class="auth-form" hidden>
-          <p class="auth-hint">Для лабораторной ссылка восстановления показывается прямо здесь (без отправки письма).</p>
           <label>Почта аккаунта<input type="email" name="email" required autocomplete="email"></label>
           <button type="submit" class="auth-submit">ПОЛУЧИТЬ ССЫЛКУ</button>
           <div id="auth-reset-link" class="auth-reset-link"></div>
